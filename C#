@@ -1,131 +1,142 @@
-////using System;
+//params 
+using System;
+class Practice1
+{
+  static void Main(string[] args)
+  {
+    double total = Multiply(10, 20.1, 2, 3, 4, 5, 6, 7, 8);
+    Console.WriteLine(total);
+    Console.ReadKey();
+  }
+  static double Multiply(params double[] prices)
+  {
+    if (prices.Length == 0) return 0; // or 1, depending on your logic
 
-////class Practice1
-////{
-////  //static void Main(string[] args)
-////  //{
-////  //  double total = Multiply(10, 20.1, 2, 3, 4, 5, 6, 7, 8);
-////  //  Console.WriteLine(total);
-////  //  Console.ReadKey();
-////  //}
-
-////  //static double Multiply(params double[] prices)
-////  //{
-////  //  if (prices.Length == 0) return 0; // or 1, depending on your logic
-
-////  //  double total = 0; // start with 1 for multiplication
-////  //  foreach (double price in prices)
-////  //  {
-////  //    total += price;
-////  //  }
-////  //  return total;
-////  //}
-
-
-////class Program
-////{
-////  static void Main(string[] args)
-////  {
-////    int r;
-////    int i;
-
-////    Console.Write("Enter the number of rows: ");
-////    r = Convert.ToInt32(Console.ReadLine());
-
-////    // 1. Single (1D) array
-////    int[] Array = new int[r];
-
-////    // 2. Multi‑dimensional array (rows × columns)
-////    int[,] MultiArray = new int[r, 3];  // 3 columns fixed for simplicity
-
-////    // 3. Jagged (ragged) array
-////    int[][] RaggedArray = new int[r][];
-
-////    // Give each row in the jagged array 3 columns (same size here)
-////    for (i = 0; i < r; i++)
-////    {
-////      RaggedArray[i] = new int[3];
-////    }
-
-////    // ==============================
-////    // Print the LENGTH info only
-////    // ==============================
-
-////    Console.WriteLine("\n--- ARRAY LENGTHS ---");
-////    Console.WriteLine("1D Array length (total elements): " + Array.Length);
-////    Console.WriteLine("MultiArray total length (r × 3): " + MultiArray.Length);
-////    Console.WriteLine("RaggedArray outer length (number of rows): " + RaggedArray.Length);
-
-////    Console.WriteLine("\nThat’s all for now! Run this and see the numbers on the screen.");
-////  }
-////}
-////}
-
-//using System;
-//using System.Runtime.InteropServices;
-//class student
-//{
-//  string stname;
-//  int strollno;
-
-//public  void setData()
-//  {
-//    Console.Write("Enter stName: ");
-//    stname = Console.ReadLine();
-
-//    Console.Write("Enter stRollNo: ");
-//    strollno = Convert.ToInt32(Console.ReadLine());
-//  }
-//public  void displayData()
-//  {
-
-//    Console.WriteLine("Student name is: " + stname);
-//    Console.WriteLine("Student roll No is: " + strollno);
-
-//  }
-
-//}
-//class marks : student
-//{
-//  int m, cp, s;
-// public void setmarks()
-//  {
-//    Console.Write("Enter Marks marks: ");
-
-//    m = Convert.ToInt32(Console.ReadLine());
-//    Console.Write("Enter Computer science marks: ");
-
-//    cp = Convert.ToInt32(Console.ReadLine());
-//    Console.Write("Enter Science marks: ");
-
-//    s = Convert.ToInt32(Console.ReadLine());
-//  }
-//  public void displayMarks()
-//  {
-//    Console.WriteLine(" obtained Maths marks: " + m);
-//    Console.WriteLine("obtained Computer science marks: " + cp);
-//    Console.WriteLine("obtained Science marks: " + s);
-//  }
-//}
-//class program
-//{
-//  static void Main(String[] args)
-//  {
-//    student s = new student();
-//    s.setData();
-//    s.displayData();
+    double total = 0; // start with 1 for multiplication
+    foreach (double price in prices)
+    {
+      total += price;
+    }
+    return total;
+  }
 
 
-//    Console.WriteLine();
-//    marks m = new marks();
-//    m.setmarks();
-//    m.displayMarks();
-//  }
-
-//}
 
 
-//inheritance
+
+
+
+//Arrays methods
+  using System;
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int r;
+      int i;
+
+      Console.Write("Enter the number of rows: ");
+      r = Convert.ToInt32(Console.ReadLine());
+
+      // 1. Single (1D) array
+      int[] Array = new int[r];
+
+      // 2. Multi‑dimensional array (rows × columns)
+      int[,] MultiArray = new int[r, 3];  // 3 columns fixed for simplicity
+
+      // 3. Jagged (ragged) array
+      int[][] RaggedArray = new int[r][];
+
+      // Give each row in the jagged array 3 columns (same size here)
+      for (i = 0; i < r; i++)
+      {
+        RaggedArray[i] = new int[3];
+      }
+
+      // ==============================
+      // Print the LENGTH info only
+      // ==============================
+
+      Console.WriteLine("\n--- ARRAY LENGTHS ---");
+      Console.WriteLine("1D Array length (total elements): " + Array.Length);
+      Console.WriteLine("MultiArray total length (r × 3): " + MultiArray.Length);
+      Console.WriteLine("RaggedArray outer length (number of rows): " + RaggedArray.Length);
+
+      Console.WriteLine("\nThat’s all for now! Run this and see the numbers on the screen.");
+    }
+  }
+}
+
+
+
+
+
+//single level inheritance
+using System;
+class student
+{
+  string stname;
+  int strollno;
+
+  public void setData()
+{
+  Console.Write("Enter stName: ");
+  stname = Console.ReadLine();
+
+  Console.Write("Enter stRollNo: ");
+  strollno = Convert.ToInt32(Console.ReadLine());
+}
+public void displayData()
+{
+  Console.WriteLine("Student name is: " + stname);
+  Console.WriteLine("Student roll No is: " + strollno);
+}
+}
+class marks : student
+{
+  int m, cp, s;
+  public void setmarks()
+  {
+    Console.Write("Enter Marks marks: ");
+
+    m = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Enter Computer science marks: ");
+
+    cp = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Enter Science marks: ");
+
+    s = Convert.ToInt32(Console.ReadLine());
+  }
+  public void displayMarks()
+{
+  Console.WriteLine(" obtained Maths marks: " + m);
+  Console.WriteLine("obtained Computer science marks: " + cp);
+  Console.WriteLine("obtained Science marks: " + s);
+}
+}
+class program
+{
+  static void Main(String[] args)
+{
+  student s = new student();
+  s.setData();
+  s.displayData();
+  Console.WriteLine();
+  marks m = new marks();
+  m.setmarks();
+  m.displayMarks();
+}
+}
+
+
+
+
+
+
+
+
+
+//mutli level inheritance 
 using System;
 class program
 {
@@ -136,16 +147,16 @@ class program
       Console.WriteLine("Hello Iam From Parent class");
     }
   }
-  public class child1:parent
+  public class child1 : parent
   {
-   public  void displaychild1()
+    public void displaychild1()
     {
       Console.WriteLine("Hello Iam Chaild1 class");
     }
   }
-  public class child2:parent
+  public class child2 : parent
   {
-     public void displaychild2()
+    public void displaychild2()
     {
       Console.WriteLine("Hello Iam child2 class");
     }
